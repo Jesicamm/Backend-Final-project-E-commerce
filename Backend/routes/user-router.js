@@ -15,7 +15,7 @@ router.get("/", async(req, res) => {
     };
 });
 
-//Register function
+//Register 
 router.post("/", async(req, res) => {
     try {
         const user = await userController.Register(req.body);
@@ -28,7 +28,7 @@ router.post("/", async(req, res) => {
         });
     };
 
-//Login de user
+//Login
 router.post('/login', async(req, res) => {
     try {
         const { email, password } = req.body;

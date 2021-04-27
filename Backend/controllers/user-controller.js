@@ -12,12 +12,13 @@ class UserController {
         return User.find(users);
     };
 
-    // Register function
+    //Register function
     async Register(user) {
         user.password = await bcrypt.hash(user.password, 5)
         return User.create(user);
     };
 
+    // Login function
     async login(email, password) {
         const user = await User.findOne({ email })
         if (!user) {

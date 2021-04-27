@@ -9,7 +9,7 @@ class ProductController {
         return Product.find();
     }
 
-    //Crear y guardar una peli
+    //Create a new product
     async createProduct(product) {
         return Product.create(product);
     };
