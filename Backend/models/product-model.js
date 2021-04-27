@@ -8,7 +8,10 @@ const productSchema = new Schema({
         type: String,
         required: true
     },
-    
+    price:{
+        type: Number,
+        required: true
+    },
     cathegory: {
         type: String,
         enum:
@@ -25,7 +28,6 @@ const productSchema = new Schema({
     }
 });
 
-productSchema.set('toJSON', toJSONConfig);
 
 
 const Product = mongoose.model("Product", productSchema);
