@@ -16,10 +16,10 @@ const productSchema = new Schema({
         type: String,
         enum:
         {
-            "Fruit":1,
-            "Vegetable":2,
-            "nuts":3,
-            "basket": 4
+            1:"Fruit",
+            2:"Vegetable",
+            3:"Nuts",
+            4:"Basket"
         }    
     },
     creationDate: {
