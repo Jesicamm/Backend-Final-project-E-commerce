@@ -1,10 +1,9 @@
 const router = require("express").Router();
+const jwt = require('jsonwebtoken');
 
-
-//importamos el controlador de user
 const userController = require("../controllers/user-controller")
 
-//traecr todos los users
+//Show all users
 router.get("/", async(req, res) => {
     try {
         res.json(await userController.showAllUsers());
@@ -16,7 +15,7 @@ router.get("/", async(req, res) => {
     };
 });
 
-//Crear un user
+//Register function
 router.post("/", async(req, res) => {
     try {
         const user = await userController.Register(req.body);
@@ -28,6 +27,19 @@ router.post("/", async(req, res) => {
             message: error.message
         });
     };
+
+//Login de user
+router.post('/login', async(req, res) => {
+    try {
+        const { email, password } = req.body;
+        const jwt = await userController.login(email, password);
+        res.json({ jwt })
+    } catch (error) {
+        return res.status(401).json({
+            message: error.message
+        });
+    }
+});
 
 
 });
