@@ -1,8 +1,11 @@
+
 const User = require("../models/user-model");
+
 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
 const secret = process.env.JWT_SECRET || 'unapalabrasecreta';
+
 
 class UserController {
     constructor() {}
@@ -37,6 +40,16 @@ class UserController {
         const token = jwt.sign(payload, secret);
         return { token, user }
     };
+
+        //Actualizar user por Id
+        async updateUser(id, user) {
+            return User.findByIdAndUpdate(id, user, { new: true });
+        };
+    
+        //Eliminar user por Id
+        async destroy(id) {
+            return User.findByIdAndRemove(id);
+        };
 
 
 

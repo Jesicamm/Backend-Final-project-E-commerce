@@ -1,9 +1,10 @@
 
 const router = require("express").Router();
 const orderController = require("../controllers/order-controller");
+const auth = require('../middlewares/auth')
 
 //Create a new order
-router.post('/', async (req, res) => {
+router.post('/',   async (req, res) => {
     try{
         const order = await orderController.buy(req.body.userId, req.body.productId);
         const status = 'success';
@@ -14,7 +15,7 @@ router.post('/', async (req, res) => {
     };
 });
 //Find all orders
-router.get('/', async (req, res)=>{
+router.get('/',  async (req, res)=>{
     try{
         res.json(await orderController.showAllOrders());
     }catch(error){

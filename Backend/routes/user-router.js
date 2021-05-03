@@ -1,10 +1,13 @@
+//Requerimos de la librería express el método router
 const router = require("express").Router();
 const jwt = require('jsonwebtoken');
+const auth = require('../middlewares/auth')
 
+//importamos el controlador de user
 const userController = require("../controllers/user-controller")
 
 //Show all users
-router.get("/", async(req, res) => {
+router.get("/", auth, async(req, res) => {
     try {
         res.json(await userController.showAllUsers());
 
@@ -27,6 +30,8 @@ router.post("/", async(req, res) => {
             message: error.message
         });
     };
+});
+
 
 //Login
 router.post('/login', async(req, res) => {
@@ -41,7 +46,32 @@ router.post('/login', async(req, res) => {
     }
 });
 
+//Delete user by Id
+router.delete("/:id", auth, async(req, res) => {
+    try {
+        const id = req.params.id;
+        const status = "deleted";
+        await userController.destroy(id);
+        res.json({status});
+    } catch (err) {
+        return res.status(500).json({
+            message: "Server error" + err 
+        });
 
+    };
 });
+
+//Update User
+router.put("/:id", auth, async(req, res) => {
+    try {
+        const id = req.params.id;
+        const updatedUser = await userController.updateUser(id, req.body);
+        res.status(200).json(updatedUser);
+    } catch (err) {
+        return res.status(500).json({
+            message: err.message
+        })
+    }
+})
 
 module.exports = router;

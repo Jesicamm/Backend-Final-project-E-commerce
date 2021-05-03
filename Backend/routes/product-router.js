@@ -3,8 +3,10 @@ const router = require('express').Router();
 
 const productController = require("../controllers/product-controller");
 
+const auth = require('../middlewares/auth')
+
 //get all products
-router.get('/', async (req, res) => {
+router.get('/',  async (req, res) => {
     try{
         res.json(await productController.indexAll())
 
@@ -30,7 +32,11 @@ router.post('/', async(req, res)=>{
             message: "Server Error"
         });
     };
+
+    
 });
+
+
 
 
 
