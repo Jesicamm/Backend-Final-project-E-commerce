@@ -17,12 +17,6 @@ const auth =  async (req, res, next) => {
             throw new Error('Cannot be verified')
         }
 
-        //const userId = req.params.id
-
-        /* if (userId != payload.userId){
-            throw new Error('User cannot be verified')
-        }
-        next() */
     }catch(err){
         res.status(500)
         .json({

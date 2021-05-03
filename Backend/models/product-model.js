@@ -12,6 +12,8 @@ const productSchema = new Schema({
         type: Number,
         required: true
     },
+    posterUrl: String,
+    description: String,
     cathegory: {
         type: String,
         enum:
