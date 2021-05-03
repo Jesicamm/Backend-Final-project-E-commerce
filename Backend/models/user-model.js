@@ -37,6 +37,11 @@ const userSchema = new Schema({
     postal: {
         type: String
     },
+    role: {
+        type: String,
+        default: 'basic',
+        enum: ["basic", "admin"]
+       },
     payment: {
         nameUser: {
             type: String

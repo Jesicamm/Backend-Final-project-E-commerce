@@ -4,7 +4,7 @@ const User = require("../models/user-model");
 const Product = require("../models/product-model");
 
 
-class Rent {
+class OrderController {
     constructor(){
 
     }
@@ -25,7 +25,7 @@ class Rent {
           
         });
     };
-    
+
     // Get all orders
     async showAllOrders(){
         return Order.find();
@@ -34,5 +34,5 @@ class Rent {
 
 };
 
-const orderController = new Rent();
+const orderController = new OrderController();
 module.exports = orderController;
