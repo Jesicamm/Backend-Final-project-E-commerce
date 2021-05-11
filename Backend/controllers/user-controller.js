@@ -51,8 +51,6 @@ class UserController {
             return User.findByIdAndRemove(id);
         };
 
-
-
 };
 
 

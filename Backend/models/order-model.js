@@ -20,11 +20,7 @@ const orderSchema = new Schema({
     order_date:{
         type: Date,
         default: new Date
-    },
-    return_date:{
-        type: Date,
-        default: new Date(+new Date()+3*24*60*60*1000)
-    },
+    }
 
 })
 

@@ -13,6 +13,10 @@ class ProductController {
     async createProduct(product) {
         return Product.create(product);
     };
+    //Delete a product 
+    async destroy(id) {
+        return Product.findByIdAndRemove(id);
+    };
 
 };
 

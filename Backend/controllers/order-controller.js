@@ -31,7 +31,6 @@ class OrderController {
         return Order.find();
 
     };
-
 };
 
 const orderController = new OrderController();
