@@ -24,21 +24,17 @@ This is an educational project for [GeeksHubsAcademy](https://geekshubsacademy.c
 
 <div style="display: flex; height: 50px">
     <img src="https://www.escuelajavascript.com/wp-content/uploads/2019/02/nodejs.png"
-     height= "50px" />
+     height= "50px" width= "60px"/>
      <img src="https://angularfrontenders.com/wp-content/uploads/2021/01/MONGO-DB-logo-300x470-x.png"
-      height= "50px" />
+      height= "50px" width= "60px"/>
      <img src="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lgyno4NC7rhy49BAEjN%2F-Lh14lb3LH4C886qWxYA%2F-Lh1DZeIUQennGd9RiHe%2FScreen%20Shot%202019-06-10%20at%2011.30.20%20AM.png?alt=media&token=784b79f6-81b5-4308-97a2-155afb9d496f"
-      height= "50px" />
+      height= "50px" width= "60px" />
        <img src="https://cms-assets.tutsplus.com/uploads/users/34/posts/29527/preview_image/mongoose.jpg"
-      height= "50px" />
+      height= "50px" width= "60px"/>
 </div>
 <br/>
 
 ## Getting Started <a name = "started"></a>
-
-[Click here to view the API documentation](https://documenter.getpostman.com/view/14551874/TzJuAHeE) and try it with your favorite HTTP REST client. We suggest Postman:
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/14551874-ad60d7e3-a5f2-4de7-81cc-e655d4c0cfe5?action=collection%2Ffork&collection-url=entityId%3D14551874-ad60d7e3-a5f2-4de7-81cc-e655d4c0cfe5%26entityType%3Dcollection%26workspaceId%3D7feef63f-71e9-4341-8040-4714fa562714)
 
 ### If clone the repository:
 To run the project locally you need to run the next command on your terminal:
